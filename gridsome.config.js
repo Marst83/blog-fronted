@@ -6,5 +6,34 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  plugins: []
+  plugins: [
+    {
+      use: '@gridsome/source-strapi',
+      options: {
+        apiURL: process.env.GRIDSOME_API_URL,
+        queryLimit: 1000, // Defaults to 100
+        contentTypes: ['post', 'tag'], //要查询的
+        singleTypes: ['general'],
+        // loginData: {
+        //   identifier: '',
+        //   password: ''
+        // }
+      },
+    },
+  ],
+  templates: {
+    // StrapiPost为上面Plugin中配置的typeName和contentTypes的组合
+    StrapiPost: [
+      {
+        path: '/post/:id',
+        component: './src/templates/Post.vue',
+      },
+    ],
+    StrapiTag: [
+      {
+        path: '/tag/:id',
+        component: './src/templates/Tag.vue',
+      },
+    ],
+  },
 }
