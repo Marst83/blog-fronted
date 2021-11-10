@@ -4,7 +4,7 @@
     <header
       class="masthead"
       :style="{
-        backgroundImage: `url(${page.post.cover.url})`,
+        backgroundImage: `url(${$page.post.cover.url})`,
       }"
     >
       <div class="container position-relative px-4 px-lg-5">
@@ -14,7 +14,7 @@
               <h1>{{ $page.post.title }}</h1>
               <span class="meta">
                 Posted by
-                <a href="#!">{{ $page.post.username }}</a>
+                <a href="#!">{{ $page.post.create_by.username }}</a>
                 on {{ $page.post.created_at }}
               </span>
             </div>
