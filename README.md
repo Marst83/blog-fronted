@@ -14,3 +14,4 @@ This is the project you get when you run `gridsome create new-project`.
 4. Happy coding 🎉🙌
 
 test
+用gridsome做的一个博客项目
